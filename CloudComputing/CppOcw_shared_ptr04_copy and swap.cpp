@@ -40,11 +40,11 @@ public:
     }
     KTest& operator=( const KTest& rhs )
     {
-        //release();
-        //px = new int;
-        //*px = *rhs.px; // copy
+        release();
+        px = new int;
+        *px = *rhs.px; // copy
 
-        this_type( rhs ).swap( *this ); // copy-and-swap idiom
+        // this_type( rhs ).swap( *this ); // copy-and-swap idiom
 
         return *this;
     }
@@ -66,7 +66,10 @@ public:
     }
     void swap( KTest& rhs )
     {
-        std::swap( px, rhs.px ); // non-throwing swap
+        KTest t = *this;
+        *this = rhs;
+        rhs = t;
+        // std::swap( px, rhs.px ); // non-throwing swap
     }
 };
 
