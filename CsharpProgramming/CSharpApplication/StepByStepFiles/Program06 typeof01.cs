@@ -51,14 +51,18 @@ namespace CSharpApplication
             {
                 Console.WriteLine( "shape2 is {0}", typeof( Circle ) );
             }
+            //System.Type t0 = shape1.GetType();
 
-            System.Type type = typeof( int );
+            bool b = (shape2 is Rectangle);
+            Console.WriteLine( "shape2 is Rectangle = {0}", b );
+
+            System.Type type = typeof(int);
 
             int radius = 3;
             Console.WriteLine( "Area = {0}", radius * radius * Math.PI );
             Console.WriteLine( "The type is {0}",
-                              ( radius * radius * Math.PI ).GetType()
-            );
+                              ( radius * radius * Math.PI ).GetType() );
+            Console.WriteLine();
         }
     }
 }

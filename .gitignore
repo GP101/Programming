@@ -2,3 +2,5 @@
 /CsharpProgramming/*.suo
 /CsharpProgramming/CSharpApplication/bin/Debug
 /CsharpProgramming/CSharpApplication/obj/Debug
+/CsharpProgramming/CSharpApplication/bin/Release
+/CsharpProgramming/CSharpApplication/obj/Release
