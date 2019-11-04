@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="StepByStepFiles\Program10 Generic05 container.cs" />
     <None Include="StepByStepFiles\Program01 Start Function static Main01.cs" />
     <None Include="StepByStepFiles\Program02 ImplicitTyping01.cs" />
     <None Include="StepByStepFiles\Program03 NullCoalesce.cs" />
