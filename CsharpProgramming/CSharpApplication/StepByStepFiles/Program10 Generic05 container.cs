@@ -8,42 +8,42 @@ namespace ConsoleApp1
 {
     class Program
     {
-        public class ParkingSpaceKey
+        public class KPoint
         {
-            private int _floor, _parkingSpace;
+            private int _x, _y;
 
-            public ParkingSpaceKey( int floor, int parkingSpace )
+            public KPoint( int x, int y )
             {
-                _floor = floor;
-                _parkingSpace = parkingSpace;
+                _x = x;
+                _y = y;
             }
 
-            public class EqualityComparer : IEqualityComparer<ParkingSpaceKey>
-            {
-                public bool Equals( ParkingSpaceKey x, ParkingSpaceKey y )
-                {
-                    return x._floor == y._floor && x._parkingSpace == y._parkingSpace;
-                }
+            //public class EqualityComparer : IEqualityComparer<KPoint>
+            //{
+            //    public bool Equals( KPoint lhs, KPoint rhs )
+            //    {
+            //        return lhs._x == rhs._x && lhs._y == rhs._y;
+            //    }
 
-                public int GetHashCode( ParkingSpaceKey x )
-                {
-                    return x._floor ^ x._parkingSpace;
-                }
-            }
-            public int GetFloor()
+            //    public int GetHashCode( KPoint p )
+            //    {
+            //        return p._x ^ p._y;
+            //    }
+            //}
+            public int GetX()
             {
-                return _floor;
+                return _x;
             }
         }
 
         static void Main( string[] args )
         {
-            Dictionary<ParkingSpaceKey,string>     parkingInfo = new Dictionary<ParkingSpaceKey, string>();
-            parkingInfo.Add( new ParkingSpaceKey( 1, 1 ), "car0" );
-            parkingInfo.Add( new ParkingSpaceKey( 3, 2 ), "car1" );
-            foreach( KeyValuePair<ParkingSpaceKey, string> pair in parkingInfo )
+            Dictionary<KPoint,string>     parkingInfo = new Dictionary<KPoint, string>();
+            parkingInfo.Add( new KPoint( 1, 1 ), "first point" );
+            parkingInfo.Add( new KPoint( 3, 2 ), "second point" );
+            foreach( KeyValuePair<KPoint, string> pair in parkingInfo )
             {
-                Console.WriteLine( "{0} {1}", pair.Key.GetFloor(), pair.Value );
+                Console.WriteLine( "{0} {1}", pair.Key.GetX(), pair.Value );
             }
         }
     }
