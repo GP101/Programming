@@ -3,20 +3,34 @@
 #include <conio.h>
 #include "TorusDefines.h"
 #include "KStack.h"
+#include <deque>
+#include "KQueue.h"
 
 int main()
 {
     KStack  s0;
+    KQueue  q0;
+
     int ch = 0;
     while (ch != 27) {
         ch = _getch();
         if (ch == 'a')
-            s0.Push(TORUS_RED);
+        {
+            q0.PopFront();
+        }
         if (ch == 's')
-            s0.Push(TORUS_GREEN);
+        {
+            q0.PopBack();
+        }
         if (ch == 'x')
-            s0.Pop();
-        s0.Draw(10, 10);
+        {
+            q0.PushBack(TORUS_RED);
+            q0.PushBack(TORUS_GREEN);
+            q0.PushBack(TORUS_BLUE);
+            q0.PushBack(TORUS_MAGENTA);
+        }
+        q0.DrawDeque(10, 6);
+        //s0.Draw(10, 10);
     }
     return 0;
 }

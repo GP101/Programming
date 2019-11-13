@@ -152,10 +152,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleTorus.cpp" />
+    <ClCompile Include="KQueue.cpp" />
     <ClCompile Include="KStack.cpp" />
     <ClCompile Include="TorusDefines.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="KQueue.h" />
     <ClInclude Include="KStack.h" />
     <ClInclude Include="TorusDefines.h" />
   </ItemGroup>

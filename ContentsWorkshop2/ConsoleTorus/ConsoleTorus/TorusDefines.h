@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <windows.h>
+#include <deque>
 
 extern const std::string g_torusText[4];
 
@@ -14,3 +15,4 @@ enum TORUS
 
 void gotoxy( int x, int y );
 void DrawText( int x, int y, const std::string& text );
+void DrawDeque(std::deque<TORUS> g, int x, int y, int maxQueue);
