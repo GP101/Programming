@@ -3,20 +3,26 @@
 #include <conio.h>
 #include "TorusDefines.h"
 #include "KStack.h"
+#include <deque>
+#include "KQueue.h"
+#include "KInput.h"
+
+bool g_isGameLoop = true;
 
 int main()
 {
+    KQueue  q0;
     KStack  s0;
-    int ch = 0;
-    while (ch != 27) {
-        ch = _getch();
-        if (ch == 'a')
-            s0.Push(TORUS_RED);
-        if (ch == 's')
-            s0.Push(TORUS_GREEN);
-        if (ch == 'x')
-            s0.Pop();
-        s0.Draw(10, 10);
+
+    while (g_isGameLoop) {
+        _KInput.GetKeys();
+
+        q0.DrawDeque(10, 10);
+        if (_KInput(27)) {
+            g_isGameLoop = false;
+        }
+
+        _KInput.GetKeys();
     }
     return 0;
 }
