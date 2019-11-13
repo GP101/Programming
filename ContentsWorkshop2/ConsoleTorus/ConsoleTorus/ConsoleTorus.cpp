@@ -5,32 +5,24 @@
 #include "KStack.h"
 #include <deque>
 #include "KQueue.h"
+#include "KInput.h"
+
+bool g_isGameLoop = true;
 
 int main()
 {
-    KStack  s0;
     KQueue  q0;
+    KStack  s0;
 
-    int ch = 0;
-    while (ch != 27) {
-        ch = _getch();
-        if (ch == 'a')
-        {
-            q0.PopFront();
+    while (g_isGameLoop) {
+        _KInput.GetKeys();
+
+        q0.DrawDeque(10, 10);
+        if (_KInput(27)) {
+            g_isGameLoop = false;
         }
-        if (ch == 's')
-        {
-            q0.PopBack();
-        }
-        if (ch == 'x')
-        {
-            q0.PushBack(TORUS_RED);
-            q0.PushBack(TORUS_GREEN);
-            q0.PushBack(TORUS_BLUE);
-            q0.PushBack(TORUS_MAGENTA);
-        }
-        q0.DrawDeque(10, 6);
-        //s0.Draw(10, 10);
+
+        _KInput.GetKeys();
     }
     return 0;
 }
