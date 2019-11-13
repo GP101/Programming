@@ -22,6 +22,7 @@ public:
     {
         return m_keys[ch] == 1;
     }
+    void Update();
 };
 
 #define _KInput KInput::GetInstance()

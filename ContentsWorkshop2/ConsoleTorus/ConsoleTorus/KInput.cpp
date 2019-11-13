@@ -16,3 +16,9 @@ void KInput::GetKeys()
         m_keys[ch] = 1;
     }
 }
+
+void KInput::Update()
+{
+    InitKeys();
+    GetKeys();
+}

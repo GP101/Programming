@@ -25,4 +25,5 @@ public:
         q0.push_back(v);
     }
     void DrawDeque(int x, int y);
+    void Update();
 };
