@@ -17,18 +17,14 @@ class Program
 
     static void Main()
     {
-        object o0 = new KDerived();
         dynamic o1 = new KDerived();
         KBase o2 = new KDerived();
 
-        //o0.Start(); // (1) error at compile time
-        o1.Start(); // (2)
-        o2.Start();
+        o1.Start(); // calls Start() of actual type
+        o2.Start(); // calls Start() of variable type
 
-        //o0.Update(); // (1) error at compile time
-        o1.Update(); // (2)
+        o1.Update(); // Update() is virtual function, so there is no difference with below
         o2.Update();
-        //o1.UndefinedFunction(); // (3) runtime exception
         /*  output:
             KDerived::Start
             KBase::Start
