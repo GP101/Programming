@@ -31,10 +31,8 @@ class Program
             Console.ReadKey();
             /*
                 KDerived::Start
-                KBase::Update
                 KDerived::Update
-                KBase::Start
-                KBase::Update
+                KDerived::Start
                 KDerived::Update
             */
         }
