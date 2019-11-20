@@ -153,16 +153,20 @@
   <ItemGroup>
     <ClCompile Include="ConsoleTorus.cpp" />
     <ClCompile Include="KInput.cpp" />
+    <ClCompile Include="KLane.cpp" />
     <ClCompile Include="KQueue.cpp" />
     <ClCompile Include="KStack.cpp" />
     <ClCompile Include="KTime.cpp" />
+    <ClCompile Include="KVector2.cpp" />
     <ClCompile Include="TorusDefines.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KInput.h" />
+    <ClInclude Include="KLane.h" />
     <ClInclude Include="KQueue.h" />
     <ClInclude Include="KStack.h" />
     <ClInclude Include="KTime.h" />
+    <ClInclude Include="KVector2.h" />
     <ClInclude Include="TorusDefines.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

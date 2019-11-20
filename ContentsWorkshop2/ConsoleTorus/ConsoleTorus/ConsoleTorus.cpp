@@ -7,28 +7,34 @@
 #include "KQueue.h"
 #include "KInput.h"
 #include "KTime.h"
+#include <thread>
+#include <chrono>
+#include "KLane.h"
+
+using namespace std::chrono;
 
 bool g_isGameLoop = true;
 
+void MyTorusCallback(KLane* plane)
+{
+    g_isGameLoop = false;
+}
+
 int main()
 {
-    KQueue  q0;
-    KStack  s0;
+    KLane   lane;
+    lane.SetTorusCallback(MyTorusCallback);
+    lane.SetHeight(10);
+    lane.InitTorus(1, 1, KVector2(0, 2), TORUS_BLUE);
 
     while (g_isGameLoop) {
         _KInput.Update();
         _KTime.Update();
 
-        Sleep( 100 );
-        // render FSP(frame per second)
-        {
-            char buff[100];
-            snprintf( buff, sizeof( buff ), "%g", _KTime.deltaTime );
-            DrawText( 1, 1, buff );
-        }
+        std::this_thread::sleep_for(100ms);
 
-        q0.Update();
-        q0.DrawDeque(10, 10);
+        lane.Update();
+        lane.Draw(1, 1);
 
         if (_KInput(27)) {
             g_isGameLoop = false;

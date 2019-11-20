@@ -2,6 +2,7 @@
 #include <string>
 #include <windows.h>
 #include <deque>
+#include "KVector2.h"
 
 extern const std::string g_torusText[4];
 

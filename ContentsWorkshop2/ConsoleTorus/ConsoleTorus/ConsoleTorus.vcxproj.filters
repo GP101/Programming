@@ -33,6 +33,12 @@
     <ClCompile Include="KTime.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KLane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KVector2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="KStack.h">
@@ -48,6 +54,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="KTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KLane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KVector2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
