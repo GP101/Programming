@@ -28,7 +28,7 @@ namespace CSharpApplication
 
         public double getArea()
         {
-            return ( Radius * Radius ) * ( 22 / 7 );
+            return Math.PI * Radius * Radius;
         }
     }
 
@@ -55,10 +55,13 @@ namespace CSharpApplication
 
             bool b = (shape2 is Rectangle);
             Console.WriteLine( "shape2 is Rectangle = {0}", b );
+            //if( shape2.GetType() == typeof( Circle ) ) {
+            //    Console.WriteLine( "shape2.GetType() == typeof( Circle )" );
+            //}
 
             System.Type type = typeof(int);
 
-            int radius = 3;
+            int radius = 1;
             Console.WriteLine( "Area = {0}", radius * radius * Math.PI );
             Console.WriteLine( "The type is {0}",
                               ( radius * radius * Math.PI ).GetType() );
