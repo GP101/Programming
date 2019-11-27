@@ -8,9 +8,15 @@ KQueue::~KQueue()
 {
 }
 
-void KQueue::DrawDeque(int x, int y)
+void KQueue::SetPos( int x, int y )
 {
-    ::DrawDeque(q0, x, y, dqmax);
+    _pos.x = x;
+    _pos.y = y;
+}
+
+void KQueue::DrawDeque()
+{
+    ::DrawDeque( q0, _pos.x, _pos.y, dqmax );
 }
 
 void KQueue::Update()

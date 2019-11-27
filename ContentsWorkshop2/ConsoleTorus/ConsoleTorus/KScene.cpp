@@ -19,16 +19,24 @@ void KScene::Initialize(KInitParam initParam)
         _queues.push_back(KQueue());
     }
     _pos = KVector2(initParam.x, initParam.y);
+    int tx = _pos.x;
+    int ty = _pos.y;
     for (int i = 0; i < _lanes.size(); ++i) {
         KLane& l = _lanes[i];
+        l.SetPos( tx, ty );
         l.SetHeight(initParam.laneHeight);
         KQueue& q = _queues[i];
+        q.SetPos( tx, ty + initParam.laneHeight );
         q.SetSize(initParam.queueSize);
+        tx += 4;
     }
     _stack.SetSize(initParam.stackSize);
     int numSkipLane = (_param.numLanes - 1) / 2;
-    _stackPos.x = initParam.x + numSkipLane * 4;
-    _stackPos.y = initParam.y + _lanes[0].GetHeight() + _queues[0].GetSize();
+    tx = initParam.x + numSkipLane * 4;
+    ty = initParam.y + _lanes[0].GetHeight() + _queues[0].GetSize();
+    _stackPos.x = tx;
+    _stackPos.y = ty;
+    //_stack.SetPos( tx, ty );
 }
 
 void KScene::Update()
@@ -47,19 +55,13 @@ void KScene::Update()
 
 void KScene::Draw()
 {
-    int     tx = _pos.x;
-    int     ty = _pos.y;
     for (int i = 0; i < _lanes.size(); ++i) {
         KLane& l = _lanes[i];
-        l.Draw(tx, ty);
-        tx += 4;
+        l.Draw();
     }
-    tx = _pos.x;
-    ty += _lanes[0].GetHeight();
     for (int i = 0; i < _queues.size(); ++i) {
         KQueue& q = _queues[i];
-        q.DrawDeque(tx, ty);
-        tx += 4;
+        q.DrawDeque();
     }
     // observer design pattern
     if (_stackStampOld != _stackStampNew) {

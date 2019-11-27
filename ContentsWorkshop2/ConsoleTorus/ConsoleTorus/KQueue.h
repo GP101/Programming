@@ -7,11 +7,13 @@ class KQueue
 private:
     std::deque<TORUS> q0;
     int dqmax = 5;
+    KVector2    _pos;
 
 public:
     KQueue();
     ~KQueue();
 
+    void SetPos( int x, int y );
     void SetSize(int size) {
         dqmax = size;
     }
@@ -29,6 +31,6 @@ public:
     void PushBack(const TORUS& v) {
         q0.push_back(v);
     }
-    void DrawDeque(int x, int y);
+    void DrawDeque();
     void Update();
 };

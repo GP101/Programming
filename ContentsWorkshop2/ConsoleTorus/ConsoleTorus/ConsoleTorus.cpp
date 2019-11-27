@@ -19,6 +19,7 @@ KScene  g_scene;
 
 int main()
 {
+    ShowConsoleCursor( false );
     KScene::KInitParam param;
     {
         param.laneHeight = 8;

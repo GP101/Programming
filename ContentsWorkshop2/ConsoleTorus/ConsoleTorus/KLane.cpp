@@ -13,6 +13,13 @@ KLane::~KLane()
 {
 }
 
+void KLane::SetPos( int x, int y )
+{
+    _pos.x = x;
+    _pos.y = y;
+    _torusPos = _pos;
+}
+
 void KLane::SetTorusCallback(TorusEndCallback cb)
 {
     _torusCallback = cb;
@@ -23,17 +30,19 @@ void KLane::SetHeight(int h)
     _height = h;
 }
 
-void KLane::InitTorus(int x, int y, KVector2 v, TORUS t)
+void KLane::InitTorus(KVector2 v, TORUS t)
 {
-    _torusPos = KVector2(x, y);
+    _torusPos = _pos;
     _torusPosBegin = _torusPos;
     _torusVel = v;
     _torus = t;
     _torusState = ETorusState::MOVING;
 }
 
-void KLane::Draw(int x, int y)
+void KLane::Draw()
 {
+    int x = _pos.x;
+    int y = _pos.y;
     for (int row = 0; row < _height; ++row) {
         const int ty = row + y;
         DrawText(x, ty, "...");

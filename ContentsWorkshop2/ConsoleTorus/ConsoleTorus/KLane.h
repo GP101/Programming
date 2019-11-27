@@ -13,6 +13,7 @@ private:
         END
     };
 private:
+    KVector2            _pos;
     int                 _height;
     KVector2            _torusPos;
     KVector2            _torusPosBegin;
@@ -24,11 +25,12 @@ private:
 public:
     KLane();
     ~KLane();
+    void SetPos( int x, int y );
     void SetTorusCallback(TorusEndCallback cb);
     void SetHeight(int h);
     int  GetHeight() { return _height; }
-    void InitTorus(int x, int y, KVector2 v, TORUS t);
-    void Draw(int x, int y);
+    void InitTorus(KVector2 v, TORUS t);
+    void Draw();
     void Update();
 };
 

@@ -17,6 +17,35 @@ void gotoxy( int x, int y )
     SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), coord );
 }
 
+void SetColor( WORD fore, WORD back )
+{
+    HANDLE hConsole = GetStdHandle( STD_OUTPUT_HANDLE );
+
+    WORD attribute;
+    attribute = ( back & 0x0f ) << 4 | ( fore & 0x0f );
+    SetConsoleTextAttribute( hConsole, attribute );
+
+    /** predefined flags
+        FOREGROUND_BLUE
+        FOREGROUND_GREEN
+        FOREGROUND_RED
+        FOREGROUND_INTENSITY
+        BACKGROUND_BLUE
+        BACKGROUND_GREEN
+        BACKGROUND_RED
+        BACKGROUND_INTENSITY
+        */
+}
+
+void ShowConsoleCursor( bool showFlag )
+{
+    HANDLE out = GetStdHandle( STD_OUTPUT_HANDLE );
+    CONSOLE_CURSOR_INFO     cursorInfo;
+    GetConsoleCursorInfo( out, &cursorInfo );
+    cursorInfo.bVisible = showFlag; // set the cursor visibility
+    SetConsoleCursorInfo( out, &cursorInfo );
+}
+
 void DrawText(int x, int y, const std::string& text)
 {
     gotoxy(x, y);
