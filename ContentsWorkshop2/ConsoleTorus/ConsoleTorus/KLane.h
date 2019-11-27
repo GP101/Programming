@@ -26,6 +26,7 @@ public:
     ~KLane();
     void SetTorusCallback(TorusEndCallback cb);
     void SetHeight(int h);
+    int  GetHeight() { return _height; }
     void InitTorus(int x, int y, KVector2 v, TORUS t);
     void Draw(int x, int y);
     void Update();

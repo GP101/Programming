@@ -1,10 +1,13 @@
 #include "KStack.h"
 #include <assert.h>
 
-KStack::KStack()
-{
+KStack::KStack() {
     _sp = 0;
     _maxSize = 4;
+}
+
+void KStack::SetSize(int size) {
+    _maxSize = size;
 }
 
 void KStack::Push( TORUS t ) {

@@ -16,4 +16,5 @@ enum TORUS
 
 void gotoxy( int x, int y );
 void DrawText( int x, int y, const std::string& text );
+void DrawText(int x, int y, int numRows, const std::string& text);
 void DrawDeque(std::deque<TORUS> g, int x, int y, int maxQueue);

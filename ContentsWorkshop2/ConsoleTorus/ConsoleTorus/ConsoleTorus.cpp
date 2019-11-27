@@ -10,31 +10,33 @@
 #include <thread>
 #include <chrono>
 #include "KLane.h"
+#include "KScene.h"
 
 using namespace std::chrono;
 
-bool g_isGameLoop = true;
-
-void MyTorusCallback(KLane* plane)
-{
-    g_isGameLoop = false;
-}
+bool    g_isGameLoop = true;
+KScene  g_scene;
 
 int main()
 {
-    KLane   lane;
-    lane.SetTorusCallback(MyTorusCallback);
-    lane.SetHeight(10);
-    lane.InitTorus(1, 1, KVector2(0, 2), TORUS_BLUE);
+    KScene::KInitParam param;
+    {
+        param.laneHeight = 8;
+        param.numLanes = 3;
+        param.queueSize = 5;
+        param.stackSize = 5;
+        param.x = 1;
+        param.y = 1;
+    }
 
+    g_scene.Initialize( param );
     while (g_isGameLoop) {
         _KInput.Update();
         _KTime.Update();
-
         std::this_thread::sleep_for(100ms);
 
-        lane.Update();
-        lane.Draw(1, 1);
+        g_scene.Update();
+        g_scene.Draw();
 
         if (_KInput(27)) {
             g_isGameLoop = false;

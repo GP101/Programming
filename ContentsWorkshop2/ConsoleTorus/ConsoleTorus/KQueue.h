@@ -12,6 +12,11 @@ public:
     KQueue();
     ~KQueue();
 
+    void SetSize(int size) {
+        dqmax = size;
+    }
+    int GetSize() { return dqmax; }
+
     void PopFront() {
         q0.pop_front();
     }

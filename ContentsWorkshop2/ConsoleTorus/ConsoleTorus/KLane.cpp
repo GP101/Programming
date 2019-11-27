@@ -6,6 +6,7 @@ KLane::KLane()
 {
     _height = 0;
     _torusState = ETorusState::BEGIN;
+    _torus = TORUS::TORUS_RED;
 }
 
 KLane::~KLane()

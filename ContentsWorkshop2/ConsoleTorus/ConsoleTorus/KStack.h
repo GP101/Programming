@@ -10,6 +10,8 @@ private:
 
 public:
     KStack();
+    void SetSize(int size);
+    int GetSize() { return _maxSize; }
     void Push( TORUS t );
     void Pop();
     // @pre must not empty

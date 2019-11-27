@@ -17,10 +17,20 @@ void gotoxy( int x, int y )
     SetConsoleCursorPosition( GetStdHandle( STD_OUTPUT_HANDLE ), coord );
 }
 
-void DrawText( int x, int y, const std::string& text )
+void DrawText(int x, int y, const std::string& text)
 {
-    gotoxy( x, y );
+    gotoxy(x, y);
     std::cout << text.c_str();
+}
+
+void DrawText(int x, int y, int numRows, const std::string& text)
+{
+    int tx = x;
+    int ty = y;
+    for (int i = 0; i < numRows; ++i) {
+        DrawText(tx, ty, text);
+        ty += 1;
+    }
 }
 
 void DrawDeque(std::deque<TORUS> g, int x, int y, int maxQueue )
