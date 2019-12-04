@@ -1,10 +1,15 @@
 #include "KScene.h"
 #include "KInput.h"
+#include <functional>
+#include <cstdlib>
+
+using namespace std::placeholders;
 
 KScene::KScene()
 {
     _stackStampOld = 0;
     _stackStampNew = 0;
+    _sceneState = SCENE_STATE_NONE;
 }
 
 KScene::~KScene()
@@ -25,6 +30,8 @@ void KScene::Initialize(KInitParam initParam)
         KLane& l = _lanes[i];
         l.SetPos( tx, ty );
         l.SetHeight(initParam.laneHeight);
+        l.SetTorusCallback( std::bind( &KScene::TorusEndCallback, this, _1 ) );
+        l.SetId(i);
         KQueue& q = _queues[i];
         q.SetPos( tx, ty + initParam.laneHeight );
         q.SetSize(initParam.queueSize);
@@ -41,12 +48,30 @@ void KScene::Initialize(KInitParam initParam)
 
 void KScene::Update()
 {
-    if (_KInput('a')) {
+    for (int i = 0; i < _lanes.size(); ++i) {
+        KLane& l = _lanes[i];
+        l.Update();
+    }
+    for (int i = 0; i < _queues.size(); ++i) {
+        KQueue& q = _queues[i];
+        q.Update();
+    }
+    //_stack.Update();
+
+    void( KScene::*stateCallback[4])() = {
+        &KScene::_Update_SCENE_STATE_NONE,
+        &KScene::_Update_SCENE_STATE_INITIALIZED,
+        &KScene::_Update_SCENE_STATE_PLAYING,
+        &KScene::_Update_SCENE_STATE_END
+    };
+    ( this->*stateCallback[_sceneState] )( );
+
+    if (_KInput(KInput::VKEY_LEFT)) {
         _stackStampNew += 1;
         _stackPosOld = _stackPos;
         _stackPos.x -= 4;
     }
-    else if (_KInput('d')) {
+    else if (_KInput( KInput::VKEY_RIGHT )) {
         _stackStampNew += 1;
         _stackPosOld = _stackPos;
         _stackPos.x += 4;
@@ -71,4 +96,35 @@ void KScene::Draw()
         _stackStampOld = _stackStampNew;
     }
     _stack.Draw(_stackPos.x, _stackPos.y);
+}
+
+void KScene::TorusEndCallback( KLane* pLane )
+{
+    TORUS t = (TORUS)( std::rand() % (int)TORUS_MAX );
+    KVector2 vel = KVector2( 0, 1 + std::rand() % 2 );
+    pLane->InitTorus( vel, t );
+}
+
+void KScene::_Update_SCENE_STATE_NONE()
+{
+    _sceneState = SCENE_STATE_INITIALIZED;
+}
+
+void KScene::_Update_SCENE_STATE_INITIALIZED()
+{
+    for (int i = 0; i < _param.numLanes; ++i) {
+        TORUS t = (TORUS)( std::rand() % (int)TORUS_MAX );
+        KVector2 vel = KVector2( 0, 1 + std::rand() % 2 );
+        KLane& lane = _lanes[i];
+        lane.InitTorus( vel, t );
+    }
+    _sceneState = SCENE_STATE_PLAYING;
+}
+
+void KScene::_Update_SCENE_STATE_PLAYING()
+{
+}
+
+void KScene::_Update_SCENE_STATE_END()
+{
 }

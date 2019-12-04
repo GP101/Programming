@@ -11,7 +11,8 @@ enum TORUS
     TORUS_RED = 0,
     TORUS_GREEN,
     TORUS_BLUE,
-    TORUS_MAGENTA
+    TORUS_MAGENTA,
+    TORUS_MAX
 };
 
 void gotoxy( int x, int y );

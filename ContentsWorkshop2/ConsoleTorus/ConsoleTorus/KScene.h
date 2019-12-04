@@ -7,6 +7,14 @@
 
 class KScene
 {
+private:
+    enum ESceneState
+    {
+        SCENE_STATE_NONE,
+        SCENE_STATE_INITIALIZED,
+        SCENE_STATE_PLAYING,
+        SCENE_STATE_END
+    };
 public:
     struct KInitParam {
         int     x;
@@ -17,6 +25,7 @@ public:
         int     stackSize;
     };
 private:
+    ESceneState             _sceneState;
     KInitParam              _param;
     std::vector<KLane>      _lanes;
     std::vector<KQueue>     _queues;
@@ -32,5 +41,12 @@ public:
     void Initialize(KInitParam initParam);
     void Update();
     void Draw();
+    void TorusEndCallback( KLane* pTorus );
+
+private:
+    void _Update_SCENE_STATE_NONE();
+    void _Update_SCENE_STATE_INITIALIZED();
+    void _Update_SCENE_STATE_PLAYING();
+    void _Update_SCENE_STATE_END();
 };
 

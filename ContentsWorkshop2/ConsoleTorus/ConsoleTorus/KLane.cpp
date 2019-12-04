@@ -20,7 +20,7 @@ void KLane::SetPos( int x, int y )
     _torusPos = _pos;
 }
 
-void KLane::SetTorusCallback(TorusEndCallback cb)
+void KLane::SetTorusCallback( std::function<void( KLane* )> cb)
 {
     _torusCallback = cb;
 }
@@ -30,11 +30,11 @@ void KLane::SetHeight(int h)
     _height = h;
 }
 
-void KLane::InitTorus(KVector2 v, TORUS t)
+void KLane::InitTorus(KVector2 velocity, TORUS t)
 {
     _torusPos = _pos;
     _torusPosBegin = _torusPos;
-    _torusVel = v;
+    _torusVel = velocity;
     _torus = t;
     _torusState = ETorusState::MOVING;
 }

@@ -13,7 +13,14 @@ void KInput::GetKeys()
 {
     if (_kbhit()) {
         int ch = _getch();
-        m_keys[ch] = 1;
+        if (ch == 224) {
+            ch = _getch();
+            m_keys[ch + 128] = 1;
+        }
+        else
+        {
+            m_keys[ch] = 1;
+        }
     }
 }
 
