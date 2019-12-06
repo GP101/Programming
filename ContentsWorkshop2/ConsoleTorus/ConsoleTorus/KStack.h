@@ -17,5 +17,6 @@ public:
     // @pre must not empty
     TORUS Top();
     bool Empty();
+    bool IsFull();
     void Draw( int x, int y );
 };

@@ -29,12 +29,16 @@ private:
     KInitParam              _param;
     std::vector<KLane>      _lanes;
     std::vector<KQueue>     _queues;
+    int                     _queueDataStamp;
+    int                     _queueDataStampNew;
     KStack                  _stack;
     int                     _stackStampOld;
     int                     _stackStampNew;
     KVector2                _pos;
     KVector2                _stackPosOld;
     KVector2                _stackPos;
+    int                     _stackLane;
+
 public:
     KScene();
     ~KScene();
@@ -48,5 +52,7 @@ private:
     void _Update_SCENE_STATE_INITIALIZED();
     void _Update_SCENE_STATE_PLAYING();
     void _Update_SCENE_STATE_END();
+
+    void _RemoveMatchTorusFromQueue();
 };
 

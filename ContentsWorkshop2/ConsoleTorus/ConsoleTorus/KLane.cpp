@@ -70,3 +70,8 @@ void KLane::Update()
         }
     }
 }
+
+TORUS KLane::GetTorus()
+{
+    return _torus;
+}

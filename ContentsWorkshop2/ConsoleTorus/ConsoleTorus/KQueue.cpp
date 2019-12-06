@@ -14,6 +14,11 @@ void KQueue::SetPos( int x, int y )
     _pos.y = y;
 }
 
+bool KQueue::IsFull()
+{
+    return q0.size() >= dqmax;
+}
+
 void KQueue::DrawDeque()
 {
     ::DrawDeque( q0, _pos.x, _pos.y, dqmax );

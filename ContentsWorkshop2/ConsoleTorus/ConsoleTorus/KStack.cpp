@@ -32,6 +32,11 @@ bool KStack::Empty() {
     return _sp == 0;
 }
 
+bool KStack::IsFull()
+{
+    return _sp >= _maxSize;
+}
+
 void KStack::Draw( int x, int y ) {
     int cx = x;
     int cy = y;

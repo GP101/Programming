@@ -35,5 +35,6 @@ public:
     void InitTorus(KVector2 velocity, TORUS t);
     void Draw();
     void Update();
+    TORUS GetTorus();
 };
 

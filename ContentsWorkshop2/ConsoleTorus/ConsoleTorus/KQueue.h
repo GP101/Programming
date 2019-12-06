@@ -25,12 +25,17 @@ public:
     void PopBack() {
         q0.pop_back();
     }
+    TORUS Back()
+    {
+        return q0.back();
+    }
     void PushFront(const TORUS& v) {
         q0.push_front(v);
     }
     void PushBack(const TORUS& v) {
         q0.push_back(v);
     }
+    bool IsFull();
     void DrawDeque();
     void Update();
 };

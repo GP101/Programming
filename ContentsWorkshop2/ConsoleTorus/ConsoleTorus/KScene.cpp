@@ -10,6 +10,8 @@ KScene::KScene()
     _stackStampOld = 0;
     _stackStampNew = 0;
     _sceneState = SCENE_STATE_NONE;
+    _queueDataStamp = 0;
+    _queueDataStampNew = 0;
 }
 
 KScene::~KScene()
@@ -43,6 +45,7 @@ void KScene::Initialize(KInitParam initParam)
     ty = initParam.y + _lanes[0].GetHeight() + _queues[0].GetSize();
     _stackPos.x = tx;
     _stackPos.y = ty;
+    _stackLane = numSkipLane; // lane number start from 0
     //_stack.SetPos( tx, ty );
 }
 
@@ -67,15 +70,45 @@ void KScene::Update()
     ( this->*stateCallback[_sceneState] )( );
 
     if (_KInput(KInput::VKEY_LEFT)) {
-        _stackStampNew += 1;
-        _stackPosOld = _stackPos;
-        _stackPos.x -= 4;
+        if (_stackLane > 0) {
+            _stackLane -= 1;
+            _stackStampNew += 1;
+            _stackPosOld = _stackPos;
+            _stackPos.x -= 4;
+        }
     }
     else if (_KInput( KInput::VKEY_RIGHT )) {
-        _stackStampNew += 1;
-        _stackPosOld = _stackPos;
-        _stackPos.x += 4;
-   }
+        if (_stackLane < _param.numLanes - 1) {
+            _stackLane += 1;
+            _stackStampNew += 1;
+            _stackPosOld = _stackPos;
+            _stackPos.x += 4;
+        }
+    }
+    else if (_KInput(KInput::VKEY_DOWN)) {
+        KQueue& q = _queues[_stackLane];
+        if (q.GetSize() > 0 && !_stack.IsFull()) {
+            TORUS t = q.Back();
+            q.PopBack();
+            _stack.Push(t);
+            _queueDataStampNew += 1;
+        }
+    }
+    else if (_KInput(KInput::VKEY_UP)) {
+        KQueue& q = _queues[_stackLane];
+        if (!q.IsFull() > 0 && !_stack.Empty()) {
+            TORUS t = _stack.Top();
+            _stack.Pop();
+            q.PushBack(t);
+            _queueDataStampNew += 1;
+        }
+    }
+
+    if (_queueDataStamp != _queueDataStampNew)
+    {
+        _queueDataStamp = _queueDataStampNew;
+        _RemoveMatchTorusFromQueue();
+    }
 }
 
 void KScene::Draw()
@@ -100,6 +133,17 @@ void KScene::Draw()
 
 void KScene::TorusEndCallback( KLane* pLane )
 {
+    TORUS tOld = pLane->GetTorus();
+    int laneId = pLane->GetId();
+    KQueue& q = _queues[laneId];
+    if (q.IsFull()) {
+        extern bool g_isGameLoop;
+        g_isGameLoop = false;
+        return;
+    }
+
+    q.PushFront(tOld);
+    _queueDataStampNew += 1;
     TORUS t = (TORUS)( std::rand() % (int)TORUS_MAX );
     KVector2 vel = KVector2( 0, 1 + std::rand() % 2 );
     pLane->InitTorus( vel, t );
@@ -127,4 +171,9 @@ void KScene::_Update_SCENE_STATE_PLAYING()
 
 void KScene::_Update_SCENE_STATE_END()
 {
+}
+
+void KScene::_RemoveMatchTorusFromQueue()
+{
+    //
 }
