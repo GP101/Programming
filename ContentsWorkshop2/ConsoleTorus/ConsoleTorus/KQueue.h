@@ -18,6 +18,7 @@ public:
         dqmax = size;
     }
     int GetSize() { return dqmax; }
+    int GetTorusCount();
 
     void PopFront() {
         q0.pop_front();
@@ -29,6 +30,9 @@ public:
     {
         return q0.back();
     }
+    TORUS Front() {
+        return q0.front();
+    }
     void PushFront(const TORUS& v) {
         q0.push_front(v);
     }
@@ -38,4 +42,7 @@ public:
     bool IsFull();
     void DrawDeque();
     void Update();
+
+    TORUS GetAt(int i);
+    bool Erase(int i);
 };

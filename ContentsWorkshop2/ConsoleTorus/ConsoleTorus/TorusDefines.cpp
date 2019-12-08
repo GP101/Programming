@@ -67,15 +67,17 @@ void DrawDeque(std::deque<TORUS> g, int x, int y, int maxQueue )
     int cx = x;
     int cy = y;
     std::deque<TORUS>::iterator it;
-    int numEmpty = maxQueue - g.size();
+    const int numEmpty = maxQueue - g.size();
+    const int numTorus = maxQueue - numEmpty;
     for (int i = 0; i < numEmpty; i++)
     {
         DrawText(cx, cy, "---");
         cy += 1;
     }
+    cy += numTorus-1;
     for (it = g.begin(); it != g.end(); it++)
     {
         DrawText(cx, cy, g_torusText[*it]);
-        cy += 1;
+        cy -= 1;
     }
 }

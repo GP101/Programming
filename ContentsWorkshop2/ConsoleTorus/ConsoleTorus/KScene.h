@@ -53,6 +53,7 @@ private:
     void _Update_SCENE_STATE_PLAYING();
     void _Update_SCENE_STATE_END();
 
+    bool _EraseLineFromQueue(int lineFrom0);
     void _RemoveMatchTorusFromQueue();
 };
 
