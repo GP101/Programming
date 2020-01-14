@@ -11,7 +11,7 @@ class Program1
         HelloDelegate hello1 = new HelloDelegate( SayHello );
         hello1 += new HelloDelegate(SayHello2);
         //hello1 += SayHello2;
-        hello1();
+        Test(hello1);
     }
     static void SayHello()
     {

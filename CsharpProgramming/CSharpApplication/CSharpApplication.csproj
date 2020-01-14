@@ -69,7 +69,6 @@
     <None Include="StepByStepFiles\Program24 Event01.cs" />
     <None Include="StepByStepFiles\Program25 Event02.cs" />
     <None Include="StepByStepFiles\Program26 Event03.cs" />
-    <None Include="StepByStepFiles\Program27 Event04 Delegate and Event.cs" />
     <None Include="StepByStepFiles\Program28 Extension Method01.cs" />
     <None Include="StepByStepFiles\Program29 yield01.cs" />
     <None Include="StepByStepFiles\Program30 yield02.cs" />
