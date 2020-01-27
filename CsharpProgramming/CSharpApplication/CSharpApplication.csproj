@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="StepByStepFiles\Program10 Generic07 new constraints.cs" />
+    <None Include="StepByStepFiles\Program10 Generic06 constraints.cs" />
     <None Include="StepByStepFiles\Program34 yield06 collection.cs" />
     <None Include="StepByStepFiles\Program06 typeof02.cs" />
     <None Include="StepByStepFiles\Program10 Generic05 container.cs" />

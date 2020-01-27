@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 class Program
 {
-    public interface KBase
+    public interface IBase
     {
         // interface members
         void Start();
         void Update();
     }
 
-    public class KDerived : KBase
+    public class KDerived : IBase
     {
         public void Start() { Console.WriteLine( "KDerived::Start" ); }
         public void Update() { Console.WriteLine( "KDerived::Update" ); }
@@ -25,7 +25,7 @@ class Program
             KDerived d = new KDerived();
             d.Start();
             d.Update();
-            KBase b = new KDerived();
+            IBase b = new KDerived();
             b.Start();
             b.Update();
             Console.ReadKey();

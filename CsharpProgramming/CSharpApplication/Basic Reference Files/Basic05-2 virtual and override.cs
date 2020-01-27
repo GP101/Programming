@@ -9,18 +9,23 @@ class Program
     public class KBase
     {
         // interface members
-        public virtual void Start() { Console.WriteLine( "KBase::Start" ); }
-        public virtual void Update() { Console.WriteLine( "KBase::Update" ); }
+        public virtual void Start() { Console.WriteLine("KBase::Start"); }
+        public virtual void Update() { Console.WriteLine("KBase::Update"); }
     }
 
     public class KDerived : KBase
     {
-        public virtual void Start() { Console.WriteLine( "KDerived::Start" ); }
-        public override void Update() { base.Update(); Console.WriteLine( "KDerived::Update" ); }
+        //public virtual void Start() 
+        public new virtual void Start()
+        //new public virtual void Start()
+        //public virtual new void Start()
+        { Console.WriteLine("KDerived::Start"); }
+        public override void Update()
+        { base.Update(); Console.WriteLine("KDerived::Update"); }
     }
     class Tester
     {
-        static void Main( string[] args )
+        static void Main(string[] args)
         {
             KDerived d = new KDerived();
             d.Start();

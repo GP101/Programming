@@ -28,16 +28,16 @@ namespace CSharpApplication
         static void Main( string[] args )
         {
             KDerived d = new KDerived();
-            //System.Type t0 = typeof(KDerived);
-            if( d.GetType() == typeof( KDerived ) )
+            //System.Type t0 = typeof(KDerived); // just for reference
+            if( d.GetType() == typeof( KDerived ) ) // (1)
             {
                 Console.WriteLine( "d.GetType() == typeof( KDerived )" );
             }
-            if( d is KBase )
+            if( d is KBase ) // (2)
             {
                 Console.WriteLine( "d is KBase" );
             }
-            if( d is KFinal )
+            if( d is KFinal ) // (3)
             {
                 Console.WriteLine( "d is KFinal" );
             }
