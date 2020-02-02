@@ -116,6 +116,7 @@
     <None Include="Custom Reference Files\Program Indexer.cs" />
     <None Include="Custom Reference Files\Program Covariance01.cs" />
     <None Include="Custom Reference Files\Program Covariance02.cs" />
+    <None Include="Basic Reference Files\Basic07 variable arguments params.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
