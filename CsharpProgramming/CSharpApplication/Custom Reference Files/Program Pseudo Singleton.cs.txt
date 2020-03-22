@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApp1
+{
+    public static class InternalGameData
+    {
+        public static int _data;
+    }
+
+    public class GameDataManager
+    {
+        public GameDataManager()
+        {
+            InternalGameData._data = 12;
+        }
+        public static int GetData()
+        {
+            return InternalGameData._data;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            GameDataManager gdm = new GameDataManager();
+            string s;
+            s = string.Format("Hello World {0}", GameDataManager.GetData());
+            Console.WriteLine(s);
+        }
+    }
+}

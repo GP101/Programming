@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ConsoleApp1
+{
+    public class GameDataManager
+    {
+        private static GameDataManager instance = new GameDataManager();
+        private int _data;
+        private GameDataManager()
+        {
+            _data = 12;
+        }
+        public int GetData()
+        {
+            return _data;
+        }
+        public static GameDataManager GetInstance()
+        {
+            return instance;
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            GameDataManager.GetInstance().GetData();
+        }
+    }
+}
