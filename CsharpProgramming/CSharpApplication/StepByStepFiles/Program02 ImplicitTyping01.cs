@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace CsharpConsole
 {
@@ -11,6 +13,10 @@ namespace CsharpConsole
             string firstName = "John";
             var lastName = "Seo";
             Console.WriteLine("{0} {1}", firstName, lastName);
+            //System.Type t = lastName.GetType();
+            //Console.WriteLine("{0}", t.Name);
+            //// Jonh Seo
+            //// String
         }
     }
 
