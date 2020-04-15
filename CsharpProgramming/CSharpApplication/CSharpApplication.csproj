@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="StepByStepFiles\Program03 NullCoalesce step01.cs" />
+    <None Include="StepByStepFiles\Program03 NullCoalesce step02.cs" />
+    <None Include="StepByStepFiles\Program03 NullCoalesce step03.cs" />
+    <None Include="StepByStepFiles\Program03 NullCoalesce step04.cs" />
+    <None Include="StepByStepFiles\Program03 NullCoalesce step05 final.cs" />
     <None Include="StepByStepFiles\Program10 Generic07 new constraints.cs" />
     <None Include="StepByStepFiles\Program10 Generic06 constraints.cs" />
     <None Include="StepByStepFiles\Program34 yield06 collection.cs" />
@@ -48,7 +53,6 @@
     <None Include="StepByStepFiles\Program10 Generic05 container.cs" />
     <None Include="StepByStepFiles\Program01 Start Function static Main01.cs" />
     <None Include="StepByStepFiles\Program02 ImplicitTyping01.cs" />
-    <None Include="StepByStepFiles\Program03 NullCoalesce.cs" />
     <None Include="StepByStepFiles\Program04 property01.cs" />
     <None Include="StepByStepFiles\Program05 Attributes01.cs" />
     <None Include="StepByStepFiles\Program06 typeof01.cs" />
@@ -106,7 +110,6 @@
     <None Include="Basic Reference Files\Basic05 interface.cs" />
     <None Include="Basic Reference Files\Basic06 preprocessor.cs" />
     <None Include="Basic Reference Files\Basic05-2 virtual and override.cs" />
-    <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table.cs" />
     <None Include="Basic Reference Files\Basic05 interface02 virtual.cs" />
     <None Include="Basic Reference Files\Basic05-2 abstract base class.cs" />
     <None Include="Basic Reference Files\Basic05-3 dynamic01.cs" />
@@ -117,6 +120,11 @@
     <None Include="Custom Reference Files\Program Covariance01.cs" />
     <None Include="Custom Reference Files\Program Covariance02.cs" />
     <None Include="Basic Reference Files\Basic07 variable arguments params.cs" />
+    <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table step01.cs" />
+    <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table step02.cs" />
+    <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table step03.cs" />
+    <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table step04.cs" />
+    <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table step05 final.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
