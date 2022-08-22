@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="StepByStepFiles\Program10 Generic05-2 container.cs" />
     <None Include="StepByStepFiles\Program03 NullCoalesce step01.cs" />
     <None Include="StepByStepFiles\Program03 NullCoalesce step02.cs" />
     <None Include="StepByStepFiles\Program03 NullCoalesce step03.cs" />
@@ -125,6 +126,15 @@
     <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table step03.cs" />
     <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table step04.cs" />
     <None Include="Basic Reference Files\Basic03-2 - Array Lookup Table step05 final.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task01 Start.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task02 Multiple Tasks.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task03 Factory.StartNew.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task04 Factory.ContinueWith.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task05 Task.WaitAll.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task06 Parallel.ForEach.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task07 Parallel.For.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task08 CancellationToken.cs" />
+    <None Include="Csharp5_TaskParallelLibrary\Program Task09 async await.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
