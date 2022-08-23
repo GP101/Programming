@@ -8,6 +8,30 @@ namespace ConsoleApp1
 {
     class Program
     {
+        static void PrintAssemblyInfo()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var types = assembly.GetTypes();
+            foreach (var type in types)
+            {
+                Console.WriteLine("Type: " + type.Name + ", Base Type: " + type.BaseType);
+                var props = type.GetProperties();
+                foreach (var prop in props)
+                {
+                    Console.WriteLine("\tProp: " + prop.Name);
+                }
+                var fields = type.GetFields();
+                foreach (var field in fields)
+                {
+                    Console.WriteLine("\tField: " + field.Name);
+                }
+                var methods = type.GetMethods();
+                foreach (var method in methods)
+                {
+                    Console.WriteLine("\tMethod: " + method.Name);
+                }
+            }
+        }
         public class KPoint
         {
             private int _x, _y;
@@ -54,27 +78,7 @@ namespace ConsoleApp1
                 Console.WriteLine("{0} {1}", pair.Key.GetX(), pair.Value);
             }
 
-            var assembly = Assembly.GetExecutingAssembly();
-            var types = assembly.GetTypes();
-            foreach (var type in types)
-            {
-                Console.WriteLine("Type: " + type.Name + ", Base Type: " + type.BaseType);
-                var props = type.GetProperties();
-                foreach (var prop in props)
-                {
-                    Console.WriteLine("\tProp: " + prop.Name);
-                }
-                var fields = type.GetFields();
-                foreach (var field in fields)
-                {
-                    Console.WriteLine("\tField: " + field.Name);
-                }
-                var methods = type.GetMethods();
-                foreach (var method in methods)
-                {
-                    Console.WriteLine("\tMethod: " + method.Name);
-                }
-            }
+            PrintAssemblyInfo();
         }
     }
     /*
