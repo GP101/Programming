@@ -9,9 +9,13 @@ namespace TupleExampleBy
         static void Main(string[] args)
         {
             OutputEncoding = UTF8;
-            Program p = new Program();
-            var price = p.GetPrice(1);
-            WriteLine($"Price: ${price.Item1}/- \nDiscount: ${price.Item2}/-");
+            Program program = new Program();
+            var p = program.GetPrice(1);
+            WriteLine($"Price: ${p.Item1}/- \nDiscount: ${p.Item2}/-");
+            (int price2, int discount) = program.GetPrice(1);
+            WriteLine($"Price2: ${price2}/- \nDiscount: ${discount}/-");
+            (int price3, _) = program.GetPrice(1);
+            WriteLine($"Price3: ${price3}/- \n");
         }
         //returning price & discount  
         (int, int) GetPrice(int itemId)
@@ -22,6 +26,9 @@ namespace TupleExampleBy
         /** output:
             Price: $500/-
             Discount: $100/-
+            Price2: $500/-
+            Discount: $100/-
+            Price3: $500/-
         */
     }
 }
