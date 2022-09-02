@@ -54,6 +54,7 @@
     <Compile Remove="Csharp7_WhatsNew\Csharp7_08_RefReturnRefLocal.cs" />
     <Compile Remove="Csharp7_WhatsNew\Csharp7_09_NamedParameter.cs" />
     <Compile Remove="Csharp7_WhatsNew\Csharp7_10_DefaultLiteral.cs" />
+    <Compile Remove="Csharp7_WhatsNew\Csharp7_11_stackalloc.cs" />
     <Compile Remove="Custom Reference Files\NullCoalesce.cs" />
     <Compile Remove="Custom Reference Files\Program Anonymous Methods and Lambda Expressions.cs" />
     <Compile Remove="Custom Reference Files\Program Covariance01.cs" />
@@ -170,6 +171,7 @@
     <None Include="Csharp7_WhatsNew\Csharp7_08_RefReturnRefLocal.cs" />
     <None Include="Csharp7_WhatsNew\Csharp7_09_NamedParameter.cs" />
     <None Include="Csharp7_WhatsNew\Csharp7_10_DefaultLiteral.cs" />
+    <None Include="Csharp7_WhatsNew\Csharp7_11_stackalloc.cs" />
     <None Include="Custom Reference Files\NullCoalesce.cs" />
     <None Include="Custom Reference Files\Program Anonymous Methods and Lambda Expressions.cs" />
     <None Include="Custom Reference Files\Program Covariance01.cs" />
