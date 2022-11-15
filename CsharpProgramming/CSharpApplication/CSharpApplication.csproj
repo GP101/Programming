@@ -71,6 +71,7 @@
     <Compile Remove="Csharp8_WhatsNew\Csharp8_13_InterpolatedVerbatimStrings.cs" />
     <Compile Remove="Custom Reference Files\NullCoalesce.cs" />
     <Compile Remove="Custom Reference Files\Program Anonymous Methods and Lambda Expressions.cs" />
+    <Compile Remove="Custom Reference Files\Program async await.cs" />
     <Compile Remove="Custom Reference Files\Program Covariance01.cs" />
     <Compile Remove="Custom Reference Files\Program Covariance02.cs" />
     <Compile Remove="Custom Reference Files\Program Delegate and Event.cs" />
@@ -201,13 +202,13 @@
     <None Include="Csharp8_WhatsNew\Csharp8_13_InterpolatedVerbatimStrings.cs" />
     <None Include="Custom Reference Files\NullCoalesce.cs" />
     <None Include="Custom Reference Files\Program Anonymous Methods and Lambda Expressions.cs" />
+    <None Include="Custom Reference Files\Program async await.cs" />
     <None Include="Custom Reference Files\Program Covariance01.cs" />
     <None Include="Custom Reference Files\Program Covariance02.cs" />
     <None Include="Custom Reference Files\Program Delegate and Event.cs" />
     <None Include="Custom Reference Files\Program Delegate.cs" />
     <None Include="Custom Reference Files\Program Extension Method.cs" />
     <None Include="Custom Reference Files\Program Garbage Collection.cs" />
-    <None Include="Custom Reference Files\Program Hello World.cs" />
     <None Include="Custom Reference Files\Program Hidden Dynamic Memory Allocation.cs" />
     <None Include="Custom Reference Files\Program Indexer.cs" />
     <None Include="Custom Reference Files\Program property.cs" />
