@@ -25,6 +25,7 @@ class Program
 
         o1.Update(); // Update() is virtual function, so there is no difference with below
         o2.Update();
+        // o1.UndefinedFunction();
         /*  output:
             KDerived::Start
             KBase::Start

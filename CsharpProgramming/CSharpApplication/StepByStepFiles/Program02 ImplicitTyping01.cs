@@ -15,9 +15,12 @@ namespace CsharpConsole
             Console.WriteLine("{0} {1}", firstName, lastName);
             //System.Type t = lastName.GetType();
             //Console.WriteLine("{0}", t.Name);
+            //lastName = 1; // generate compile time error
+            //dynamic lastName = "Seo";
+            //lastName = 1; // ok for dynamic type
+            //Console.WriteLine("{0}", lastName.GetType().Name);
             //// Jonh Seo
             //// String
         }
     }
-
 }

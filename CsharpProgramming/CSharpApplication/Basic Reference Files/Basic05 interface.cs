@@ -13,14 +13,22 @@ class Program
         void Update();
     }
 
-    public class KDerived : IBase
+    //public interface IMouseEvent
+    //{
+    //    void OnPointEnter();
+    //    void OnPointExit();
+    //}
+
+    public class KDerived : IBase//, IMouseEvent
     {
-        public void Start() { Console.WriteLine( "KDerived::Start" ); }
-        public void Update() { Console.WriteLine( "KDerived::Update" ); }
+        public void Start() { Console.WriteLine("KDerived::Start"); }
+        public void Update() { Console.WriteLine("KDerived::Update"); }
+        //public void OnPointEnter() { }
+        //public void OnPointExit() { }
     }
     class Tester
     {
-        static void Main( string[] args )
+        static void Main(string[] args)
         {
             KDerived d = new KDerived();
             d.Start();
