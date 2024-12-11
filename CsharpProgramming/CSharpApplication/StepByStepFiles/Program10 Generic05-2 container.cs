@@ -44,9 +44,9 @@ namespace ConsoleApp1
 
             public class EqualityComparer : IEqualityComparer<KPoint>
             {
-                public bool Equals(KPoint lhs, KPoint rhs)
+                public bool Equals(KPoint? lhs, KPoint? rhs)
                 {
-                    return lhs._x == rhs._x && lhs._y == rhs._y;
+                    return lhs?._x == rhs?._x && lhs?._y == rhs?._y;
                 }
 
                 public int GetHashCode(KPoint p)
@@ -65,20 +65,15 @@ namespace ConsoleApp1
         {
             //Dictionary<KPoint, string> parkingInfo = new Dictionary<KPoint, string>();
             Dictionary<KPoint, string> parkingInfo = new Dictionary<KPoint, string>(new KPoint.EqualityComparer());
-            try
-            {
-                parkingInfo.Add(new KPoint(1, 1), "first point");
-                parkingInfo.Add(new KPoint(1, 1), "second point");
-            }
-            catch
-            {
-            }
+            parkingInfo.Add(new KPoint(1, 1), "first point");
+            bool isKey = parkingInfo.ContainsKey(new KPoint(1, 1));
+            parkingInfo.TryAdd(new KPoint(1, 1), "second point");
             foreach (KeyValuePair<KPoint, string> pair in parkingInfo)
             {
                 Console.WriteLine("{0} {1}", pair.Key.GetX(), pair.Value);
             }
 
-            PrintAssemblyInfo();
+            //PrintAssemblyInfo();
         }
     }
     /*

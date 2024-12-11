@@ -4,10 +4,10 @@ using System.Text;
 
 namespace CSharpApplication
 {
-    public abstract class KBase
+    public class KBase
     {
-        public abstract void Start();
-        public abstract void Update();
+        public virtual void Start() { }
+        public virtual void Update() { }
     }
 
     public class KDerived : KBase
@@ -22,16 +22,22 @@ namespace CSharpApplication
         public override void Update() { Console.WriteLine("KFinal::Update"); }
     }
 
-    public class KWrapper<T> where T : KBase
+    public class KWrapper<T>
+    //public class KWrapper<T> where T : KBase
+    //public class KWrapper<T> where T : KBase, new()
     {
         private T _target;
+        //public KWrapper()
+        //{
+        //    _target = new T();
+        //}
         public KWrapper(T t)
         {
             _target = t;
         }
         public void DoUpdate()
         {
-            _target.Update();
+            //_target.Update();
         }
     }
 

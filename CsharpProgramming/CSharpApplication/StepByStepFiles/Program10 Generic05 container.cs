@@ -18,9 +18,9 @@ namespace ConsoleApp1
 
             //public class EqualityComparer : IEqualityComparer<KPoint>
             //{
-            //    public bool Equals( KPoint lhs, KPoint rhs )
+            //    public bool Equals( KPoint? lhs, KPoint? rhs )
             //    {
-            //        return lhs._x == rhs._x && lhs._y == rhs._y;
+            //        return lhs?._x == rhs?._x && lhs?._y == rhs?._y;
             //    }
 
             //    public int GetHashCode( KPoint p )

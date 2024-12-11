@@ -8,6 +8,10 @@
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);IOS</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Basic Reference Files\Basic01 Type Conversion.cs" />
     <Compile Remove="Basic Reference Files\Basic02 class and structure.cs" />
@@ -82,6 +86,7 @@
     <Compile Remove="Custom Reference Files\Program Hello World.cs" />
     <Compile Remove="Custom Reference Files\Program Hidden Dynamic Memory Allocation.cs" />
     <Compile Remove="Custom Reference Files\Program Indexer.cs" />
+    <Compile Remove="Custom Reference Files\Program Indexer2.cs" />
     <Compile Remove="Custom Reference Files\Program property.cs" />
     <Compile Remove="Custom Reference Files\Program Reflection.cs" />
     <Compile Remove="Custom Reference Files\Program Start Function static Main.cs" />
@@ -213,6 +218,7 @@
     <None Include="Custom Reference Files\Program Garbage Collection.cs" />
     <None Include="Custom Reference Files\Program Hidden Dynamic Memory Allocation.cs" />
     <None Include="Custom Reference Files\Program Indexer.cs" />
+    <None Include="Custom Reference Files\Program Indexer2.cs" />
     <None Include="Custom Reference Files\Program property.cs" />
     <None Include="Custom Reference Files\Program Reflection.cs" />
     <None Include="Custom Reference Files\Program Start Function static Main.cs" />
