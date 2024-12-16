@@ -143,6 +143,24 @@
     <Compile Remove="StepByStepFiles\Program32 yield04.cs" />
     <Compile Remove="StepByStepFiles\Program33 yield05.cs" />
     <Compile Remove="StepByStepFiles\Program34 yield06 collection.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program Attribute.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program GameLoop with Coroutine.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program GameLoop.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program GameObject01 inherits interfaces.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program GameObject02 GetComponent.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program GameObject03 GameObject class hierarchy.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program GameObject04 Reflection.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program GameObject05 Reflection iteration.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program yield01 IEnumerator.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program yield02 Container.cs" />
+    <Compile Remove="UnityFrameworkFiles\Program yield03 Unity Coroutine.cs" />
+    <Compile Remove="UnityFrameworkFiles\UnityComponentModel01 MonoBehavior.cs" />
+    <Compile Remove="UnityFrameworkFiles\UnityComponentModel02 AddComponent.cs" />
+    <Compile Remove="UnityFrameworkFiles\UnityComponentModel03 GetComponent.cs" />
+    <Compile Remove="UnityFrameworkFiles\UnityComponentModel04 Adding Test Component.cs" />
+    <Compile Remove="UnityFrameworkFiles\UnityComponentModel05 Broadcast.cs" />
+    <Compile Remove="UnityFrameworkFiles\UnityComponentModel06 GameLoop.cs" />
+    <Compile Remove="UnityFrameworkFiles\UnityComponentModel07 GameLoop with Coroutine.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -275,6 +293,24 @@
     <None Include="StepByStepFiles\Program32 yield04.cs" />
     <None Include="StepByStepFiles\Program33 yield05.cs" />
     <None Include="StepByStepFiles\Program34 yield06 collection.cs" />
+    <None Include="UnityFrameworkFiles\Program Attribute.cs" />
+    <None Include="UnityFrameworkFiles\Program GameLoop with Coroutine.cs" />
+    <None Include="UnityFrameworkFiles\Program GameLoop.cs" />
+    <None Include="UnityFrameworkFiles\Program GameObject01 inherits interfaces.cs" />
+    <None Include="UnityFrameworkFiles\Program GameObject02 GetComponent.cs" />
+    <None Include="UnityFrameworkFiles\Program GameObject03 GameObject class hierarchy.cs" />
+    <None Include="UnityFrameworkFiles\Program GameObject04 Reflection.cs" />
+    <None Include="UnityFrameworkFiles\Program GameObject05 Reflection iteration.cs" />
+    <None Include="UnityFrameworkFiles\Program yield01 IEnumerator.cs" />
+    <None Include="UnityFrameworkFiles\Program yield02 Container.cs" />
+    <None Include="UnityFrameworkFiles\Program yield03 Unity Coroutine.cs" />
+    <None Include="UnityFrameworkFiles\UnityComponentModel01 MonoBehavior.cs" />
+    <None Include="UnityFrameworkFiles\UnityComponentModel02 AddComponent.cs" />
+    <None Include="UnityFrameworkFiles\UnityComponentModel03 GetComponent.cs" />
+    <None Include="UnityFrameworkFiles\UnityComponentModel04 Adding Test Component.cs" />
+    <None Include="UnityFrameworkFiles\UnityComponentModel05 Broadcast.cs" />
+    <None Include="UnityFrameworkFiles\UnityComponentModel06 GameLoop.cs" />
+    <None Include="UnityFrameworkFiles\UnityComponentModel07 GameLoop with Coroutine.cs" />
   </ItemGroup>
 
 </Project>
