@@ -7,6 +7,8 @@ using System.Reflection;
 using System.Windows.Input;
 using System.Threading;
 
+#pragma warning disable 8600, 8603, 8618
+
 namespace UnderstandingUnityEngine
 {
     public abstract class Component
@@ -100,7 +102,7 @@ namespace UnderstandingUnityEngine
             GameObject e = new GameObject();
             e.BroadcastMessage("Start");
 
-            while ( true )
+            while (true)
             {
                 if (Console.KeyAvailable)
                 {

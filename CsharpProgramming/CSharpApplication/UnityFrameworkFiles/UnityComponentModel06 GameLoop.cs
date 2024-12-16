@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
+#pragma warning disable 8600, 8603, 8618
+
 namespace UnderstandingUnityEngine
 {
     public abstract class Component
     {
         public GameObject gameObject { get; set; }
-        public void SendMessage( string methodName ) { }
+        public void SendMessage(string methodName) { }
     }
 
     public class Behavior : Component
@@ -19,7 +21,7 @@ namespace UnderstandingUnityEngine
 
     public class MonoBehavior : Behavior
     {
-        public void Invoke( string methodName ) { }
+        public void Invoke(string methodName) { }
     }
 
     public class BoxCollider : MonoBehavior
@@ -31,7 +33,7 @@ namespace UnderstandingUnityEngine
     {
         public void GetMaterial()
         {
-            Console.WriteLine( "GetMaterial" );
+            Console.WriteLine("GetMaterial");
         }
     }
 
@@ -52,31 +54,31 @@ namespace UnderstandingUnityEngine
         {
             T component = new T();
             component.gameObject = this;
-            m_components.Add( component );
+            m_components.Add(component);
             return component;
         }
 
         public T GetComponent<T>() where T : Component
         {
-            foreach( var comp in m_components )
+            foreach (var comp in m_components)
             {
-                if( comp.GetType() == typeof( T ) )
+                if (comp.GetType() == typeof(T))
                 {
-                    return ( T )comp;
+                    return (T)comp;
                 }
             }
-            return default( T );
+            return default(T);
         }
 
-        public void BroadcastMessage( string methodName )
+        public void BroadcastMessage(string methodName)
         {
-            foreach( var comp in m_components )
+            foreach (var comp in m_components)
             {
                 Type t = comp.GetType();
-                MethodInfo minfo = t.GetMethod( methodName );
-                if( minfo != null )
+                MethodInfo minfo = t.GetMethod(methodName);
+                if (minfo != null)
                 {
-                    minfo.Invoke( comp, null );
+                    minfo.Invoke(comp, null);
                 }
             }
         }
@@ -97,20 +99,20 @@ namespace UnderstandingUnityEngine
 
     class Program
     {
-        static void Main( string[] args )
+        static void Main(string[] args)
         {
             GameObject e = new GameObject();
-            e.BroadcastMessage( "Start" );
+            e.BroadcastMessage("Start");
 
-            while( true )
+            while (true)
             {
-                if( Console.KeyAvailable )
+                if (Console.KeyAvailable)
                 {
-                    if( Console.ReadKey().Key == ConsoleKey.Escape )
+                    if (Console.ReadKey().Key == ConsoleKey.Escape)
                         break;
                 }
-                e.BroadcastMessage( "Update" );
-                System.Threading.Thread.Sleep( 1000 );
+                e.BroadcastMessage("Update");
+                System.Threading.Thread.Sleep(1000);
             }
         }
     }

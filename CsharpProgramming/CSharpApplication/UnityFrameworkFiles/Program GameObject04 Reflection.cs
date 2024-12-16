@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
+#pragma warning disable 8600, 8603, 8618
+
 namespace UnderstandingUnityEngine
 {
     public abstract class Component

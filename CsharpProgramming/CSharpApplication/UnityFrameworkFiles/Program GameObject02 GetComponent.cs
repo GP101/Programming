@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+#pragma warning disable 8603
+
 namespace UnderstandingUnityEngine
 {
     public class Component

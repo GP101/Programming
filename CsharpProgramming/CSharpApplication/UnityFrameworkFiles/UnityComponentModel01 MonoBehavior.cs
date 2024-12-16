@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
 
+#pragma warning disable 8618
+
 namespace UnderstandingUnityEngine
 {
     public abstract class Component
     {
         public GameObject gameObject { get; set; }
-        public void SendMessage( string methodName ) { }
+        public void SendMessage(string methodName) { }
     }
 
     public class Behavior : Component
@@ -19,7 +21,7 @@ namespace UnderstandingUnityEngine
 
     public class MonoBehavior : Behavior
     {
-        public void Invoke( string methodName ) { }
+        public void Invoke(string methodName) { }
     }
 
     public class BoxCollider : MonoBehavior
@@ -31,7 +33,7 @@ namespace UnderstandingUnityEngine
     {
         public void GetMaterial()
         {
-            Console.WriteLine( "GetMaterial" );
+            Console.WriteLine("GetMaterial");
         }
     }
 
@@ -41,7 +43,7 @@ namespace UnderstandingUnityEngine
 
     class Program
     {
-        static void Main( string[] args )
+        static void Main(string[] args)
         {
             GameObject e = new GameObject();
         }
